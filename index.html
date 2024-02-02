@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Data from POST requests:</h1>
+    <div id="data"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        socket.on('post_received', function(data) {
+            document.getElementById('data').innerText += JSON.stringify(data) + '\n';
+        });
+    </script>
+</body>
+</html>
